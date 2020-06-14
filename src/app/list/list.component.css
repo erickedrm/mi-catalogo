@@ -1,12 +1,13 @@
 .lista{
     
     height: 120px;
-    margin: 10px 200px;
+    margin: 20px 200px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 3px solid #dae1e7; 
-    background-color: #00909e;
+    border: 1px solid #52616b; 
+    background-color: #52616b;
+    border-radius: 19px;
    
 }
 
@@ -22,4 +23,12 @@
     font-size: xx-large;
     font-family: fantasy;
 }
+
+.texto2{
+    
+    margin-right: 50px;
+    font-size: large;
+    font-family: fantasy;
+}
+
 

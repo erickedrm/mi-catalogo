@@ -1,8 +1,24 @@
-<div *ngFor='let auto of autos'>
-   <div class="lista"> 
-    
-        <img class="imagen" src="assets/images/info.png" alt="Imagen informacion" srcset width="100" >
-    
-        <div class="texto">{{auto.marca}} {{auto.submarca}}</div>
-     </div>
-</div>
+<ng-container *ngFor='let auto of autos'>
+    <div class="lista">
+        <div (click)="open(content,auto)"> <img class="imagen" src="assets/images/info.png" alt="Imagen informacion"
+                srcset width="57"> </div>
+
+        <div class="texto">{{auto?.marca}} {{auto?.submarca}}</div>
+
+    </div>
+</ng-container>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="texto" id="modal-basic-title">Detalles del Automovil</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="texto2">
+        Marca: {{autoSeleccionado?.marca}}<br>
+        Modelo: {{autoSeleccionado?.modelos}}<br>
+        Submarca: {{autoSeleccionado?.submarca}}<br>
+        Descripcion: {{autoSeleccionado?.descripcion}}
+    </div>
+</ng-template>
