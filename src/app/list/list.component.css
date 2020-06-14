@@ -15,6 +15,7 @@
 .imagen{
     
     margin: 1px 25px ;
+    cursor: pointer;
 }
 
 .texto{
@@ -30,5 +31,6 @@
     font-size: large;
     font-family: fantasy;
 }
+
 
 

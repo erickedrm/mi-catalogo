@@ -2,11 +2,7 @@
     background-color: #c9d6df;
     display: flex;
     height: 50px;
-    font-size: xx-large;
-   
-   
-    
-    
+    font-size: x-large;
 }
 
 .ab{
@@ -18,8 +14,16 @@
     border: 1px solid #110d08 ; 
     text-decoration: none;
     font-family: fantasy;
+    color: black;
 }
 
+.ab:hover{
+    background-color:lightslategray;
+}
 
-
-
+.active{
+    background-color: dimgray;
+}
+.active:hover{
+    background-color: dimgray ;
+}
