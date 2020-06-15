@@ -1,9 +1,9 @@
 
-
+<div class="pag"> 
 <div class="tabla"><table class="table table-striped">
   <thead>
   <tr>
-    <th scope="col">#</th>
+    <th scope="col">Id</th>
     <th scope="col">Marca</th>
     <th scope="col">Modelo</th>
     <th scope="col">Submarca</th>
@@ -11,13 +11,25 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let auto of autos; index as i">
-    <th scope="row">{{ i + 1 }}</th>
+  <tr *ngFor="let auto of autos | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+    <th> {{ auto._id }}</th>
     <td> {{ auto.marca }}  </td>
     <td>{{ auto.modelos }}</td>
     <td>{{ auto.submarca }}</td>
     <td >{{ auto.descripcion }}</td>
+    <td ><img  src="assets/images/update.png" alt="Imagen informacion"
+      srcset width="20"></td>
+    <td> <img  src="assets/images/eliminar.png" alt="Imagen informacion"
+      srcset width="20"></td>
   </tr>
   </tbody>
 </table>
+</div>
+
+<ngb-pagination
+  [(page)]="page"
+  [pageSize]="pageSize"
+  [collectionSize]="autos?.length"></ngb-pagination>
+
+
 </div>

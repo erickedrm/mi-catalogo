@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: space-between;
     border: 1px solid #52616b; 
-    background-color: #52616b;
+    background-color: gainsboro;
     border-radius: 19px;
    
 }
@@ -32,5 +32,10 @@
     font-family: fantasy;
 }
 
+.pag{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
 

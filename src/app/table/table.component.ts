@@ -10,6 +10,8 @@ import { AutosService } from '../service/autos.service';
 })
 export class TableComponent implements OnInit {
   autos:Automovil[];
+  page = 1;
+  pageSize = 10;
 
   constructor( private autoService : AutosService) { }
 
