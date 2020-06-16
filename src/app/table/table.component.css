@@ -1,13 +1,26 @@
 .tabla{
-    width: 70%;
     border: 1px solid rgb(233, 233, 233);
     border-radius: 10px;
-    margin: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .pag{
-    display: flex;
+    
     align-items: center;
     flex-direction: column;
+    font-family: fantasy;
+    font-size: large;
+    
+}
+
+.imagen{
+    
+
+    cursor: pointer;
+}
+
+.boton{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 

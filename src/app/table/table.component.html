@@ -1,5 +1,8 @@
 
 <div class="pag"> 
+  <div class="boton">
+  <button type="button" class="btn btn-info" (click)="openModalAgregar()" >Agregar Nuevo Automovil </button> 
+</div>
 <div class="tabla"><table class="table table-striped">
   <thead>
   <tr>
@@ -17,14 +20,14 @@
     <td>{{ auto.modelos }}</td>
     <td>{{ auto.submarca }}</td>
     <td >{{ auto.descripcion }}</td>
-    <td ><img  src="assets/images/update.png" alt="Imagen informacion"
-      srcset width="20"></td>
-    <td> <img  src="assets/images/eliminar.png" alt="Imagen informacion"
-      srcset width="20"></td>
+    <td (click)="openModalEditar(auto)"><img  src="assets/images/update.png" class="imagen" alt="Imagen update" srcset width="20"></td>
+    <td > <img  src="assets/images/eliminar.png" class="imagen" alt="Imagen eliminar" srcset width="20"></td>
   </tr>
   </tbody>
 </table>
 </div>
+
+
 
 <ngb-pagination
   [(page)]="page"

@@ -10,22 +10,25 @@ import { AutosService } from '../service/autos.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  autos:Automovil[];
-  autoSeleccionado:Automovil;
-  page = 1;
-  pageSize = 10;
-  constructor(private modalService: NgbModal, private autoService : AutosService) { }
+  autos: Automovil[];
+  autoSeleccionado: Automovil;
+  page : number;
+  pageSize : number;
+
+  constructor(private modalService: NgbModal, private autoService: AutosService) { }
 
   ngOnInit(): void {
+    this.page = 1;
+    this.pageSize = 10;
     this.autoService.getAutos().subscribe((response) => {
       this.autos = response.data
     })
   }
-  
+
   open(content, auto: Automovil) {
-    this.modalService.open(content,{ centered: true });
-    this.autoSeleccionado=auto;
-    
+    this.modalService.open(content, { centered: true });
+    this.autoSeleccionado = auto;
+
   }
 }
 
