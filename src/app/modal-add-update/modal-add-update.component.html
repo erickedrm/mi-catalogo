@@ -23,12 +23,12 @@
 
         <div class="form-group">
             <label for="modelo">Modelos</label>
-            <input type="text" disabled class="form-control" class="form-control" id="modelo" placeholder="Agrega el modelo" [(ngModel)]="auto.modelos" name="modelos">
+            <input type="text"  class="form-control" id="modelo" placeholder="Agrega el modelo" [(ngModel)]="auto.modelos" name="modelos">
         </div>
 
 
         <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" (click)="activeModal.close('se guardo')">Guardar</button>
+            <button type="submit" class="btn btn-primary" (click)="activeModal.close(auto)">Guardar</button>
         </div>
 
     </form>
