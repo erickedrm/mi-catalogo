@@ -21,10 +21,11 @@
     <td>{{ auto.submarca }}</td>
     <td >{{ auto.descripcion }}</td>
     <td (click)="openModalEditar(auto)"><img  src="assets/images/update.png" class="imagen" alt="Imagen update" srcset width="20"></td>
-    <td > <img  src="assets/images/eliminar.png" class="imagen" alt="Imagen eliminar" srcset width="20"></td>
+    <td  (click)="openModalAgregar()"> <img  src="assets/images/eliminar.png" class="imagen" alt="Imagen eliminar" srcset width="20"></td>
   </tr>
   </tbody>
 </table>
+
 </div>
 
 
