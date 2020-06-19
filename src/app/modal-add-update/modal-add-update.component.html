@@ -5,32 +5,76 @@
     </button>
 </div>
 <div class="modal-body">
-    <form #formAutos = "ngForm">
+    <form #formAutos="ngForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="marca">Marca</label>
-            <input type="text" class="form-control" id="marca" placeholder="Agrega la marca" [(ngModel)]="auto.marca" name="marca">
+            <input type="text" class="form-control" id="marca" placeholder="Agrega la marca" [(ngModel)]="auto.marca"
+                name="marca" required minlength="4" #marca = "ngModel">
+        </div>
+
+        <div *ngIf="marca.invalid && (marca.dirty || marca.touched)">
+            <div *ngIf="marca.errors.minlength" class="alert alert-danger">La marca debe de tener minimo 4 caracteres </div>
+            <div *ngIf="marca.errors.required" class="alert alert-danger">La marca es requerida </div>
         </div>
 
         <div class="form-group">
             <label for="submarca">Submarca</label>
-            <input type="text" class="form-control" id="submarca" placeholder="Agrega la submarca" [(ngModel)]="auto.submarca" name="submarca">
+            <input type="text" class="form-control" id="submarca" placeholder="Agrega la submarca"
+                [(ngModel)]="auto.submarca" name="submarca" required minlength="4" #submarca = "ngModel">
         </div>
+
+        <div *ngIf="submarca.invalid && (submarca.dirty || submarca.touched)">
+            <div *ngIf="submarca.errors.minlength" class="alert alert-danger">La submarca debe de tener minimo 4 caracteres </div>
+            <div *ngIf="submarca.errors.required" class="alert alert-danger">La submarca es requerida </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            <label for="min">Desde</label>
+            <div style="display: flex;" style="justify-content:flex-start;">
+
+                <input type="range" style="width: 30%;" min="2000" max="2020" class="form-control boxn" id="min"
+                    placeholder="Desde" [(ngModel)]="aniominimo" name="min" #min ="ngModel" (change)="anios()"> {{aniominimo}}
+
+            </div>
+
+
+        </div>
+
+       
+
+
+        <div class="form-group">
+            <label for="max">Hasta</label>
+            <div style="display: flex;" style="justify-content:flex-start;">
+
+                <input style="width: 30%;" type="range" min="2000" max="2020" class="form-control boxn" id="max"
+                    placeholder="Hasta" [(ngModel)]="aniomaximo" name="max" #max = "ngModel" (change)="anios()"> {{aniomaximo}}
+
+            </div>
+
+
+        </div>
+
+       
+
+        <div *ngIf="aniomaximo < aniominimo">
+            <div class="alert alert-danger"> El segundo año debe de ser mayor o igual al primero </div>
+        </div>
+        
 
         <div class="form-group">
             <label for="descripcion">Descripcion</label>
-            <input type="text" class="form-control" id="descripcion" placeholder="Agrega la descripcion" [(ngModel)]="auto.descripcion" name="descripcion">
+            <input type="text" class="form-control" id="descripcion" placeholder="Agrega la descripcion"
+                [(ngModel)]="auto.descripcion" name="descripcion">
         </div>
-
-        <div class="form-group">
-            <label for="modelo">Modelos</label>
-            <input type="text"  class="form-control" id="modelo" placeholder="Agrega el modelo" [(ngModel)]="auto.modelos" name="modelos">
-        </div>
+      
 
 
         <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" (click)="activeModal.close(auto)">Guardar</button>
+            <button type="submit" class="btn btn-primary" [disabled] ="!formAutos.form.valid">Guardar</button>
         </div>
 
     </form>
 </div>
-
